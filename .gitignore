@@ -1,0 +1,14 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Extension build output
+web-ext-artifacts/
+*.xpi
+*.zip
+
+# Dependencies (only matters if you start using npm)
+node_modules/
+
+# Secrets, if you ever add any
+.env

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "RMP SMU Test",
+  "version": "1.0",
+  "description": "RMP for SMU",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "example@gmail.com",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://my.smu.edu/psc/ps/EMPLOYEE/SA/s/WEBLIB_HCX_CM.H_CLASS_SEARCH.FieldFormula.IScript_Main*"
+      ],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ]
+}

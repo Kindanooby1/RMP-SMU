@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "RMP SMU Test",
+  "name": "RMP SMU",
   "version": "1.0",
-  "description": "RMP for SMU",
+  "description": "RMP extension for SMU",
   "browser_specific_settings": {
     "gecko": {
       "id": "example@gmail.com",

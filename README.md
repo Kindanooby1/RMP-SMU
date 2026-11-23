@@ -1,7 +1,9 @@
 # A Simple RateMyProfessor Extension for SMU
 
 Get on Chrome here: [when it gets approved]
+
 Get on Firefox here: [when it gets approved]
+
 On mySMU, implements a direct link to a search of the professor's name on RateMyProfessor (RMP)
 
 Works on the following pages on mySMU:

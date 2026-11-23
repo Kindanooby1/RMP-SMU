@@ -1,25 +1,36 @@
-setTimeout(test_emails, 15000); // Hard set delay for now. need to set better later
+// Run once for if it's already loaded for some reason
+createLinks();
 
-function test_emails() {
+const options = {childList: true, subtree: true};
+
+const observer = new MutationObserver(createLinks);
+observer.observe(document, options);
+
+function createLinks() {
 
     const profList = document.querySelectorAll('a[href^=mailto]')
 
     for (const prof of profList) {
-        const prof_name = prof.textContent.trim();
-        const profLink = "https://google.com"; // Need to change link per prof
 
-        // Anchor with the link and text and stuff
-        const profLinkAnchor = document.createElement("a");
+        if (!(prof.dataset.done)) {
+            const prof_name = prof.textContent.trim();
+            const profLink = "https://google.com"; // Need to change link per prof
 
-        profLinkAnchor.textContent = "Link to google"; // Prob change to "RMP" or smth later
-        profLinkAnchor.setAttribute("href", profLink);
-        profLinkAnchor.setAttribute("target", "_blank"); // Opens link in new tab
-        profLinkAnchor.setAttribute("rel", "noopener noreferrer") // Security
+            // Anchor with the link and text and stuff
+            const profLinkAnchor = document.createElement("a");
 
-        // Div to parent anchor so that it's on a new line
-        const profLinkSpace = document.createElement("div");
-        profLinkSpace.appendChild(profLinkAnchor);
+            profLinkAnchor.textContent = "Link to google"; // Prob change to "RMP" or smth later
+            profLinkAnchor.setAttribute("href", profLink);
+            profLinkAnchor.setAttribute("target", "_blank"); // Opens link in new tab
+            profLinkAnchor.setAttribute("rel", "noopener noreferrer") // Security
 
-        prof.after(profLinkSpace);
+            // Div to parent anchor so that it's on a new line
+            const profLinkSpace = document.createElement("div");
+            profLinkSpace.appendChild(profLinkAnchor);
+
+            prof.after(profLinkSpace);
+
+            prof.dataset.done = true;
+        }
     }
 }

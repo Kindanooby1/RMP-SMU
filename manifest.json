@@ -5,7 +5,7 @@
   "description": "RMP extension for SMU",
   "browser_specific_settings": {
     "gecko": {
-      "id": "example@gmail.com",
+      "id": "abacad@gmail.com",
       "data_collection_permissions": {
         "required": [
           "none"
